@@ -13,6 +13,7 @@ class List
         void push_back(T data);
         int Get_Size();
         void del(const T index);
+        void pop_front();
         
         T& operator[](const int index)
         {
