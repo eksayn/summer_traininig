@@ -9,11 +9,12 @@ class List
 {
     public:
         List();
-        
+        ~List();
         void push_back(T data);
         int Get_Size();
         void del(const T index);
         void pop_front();
+        void clear();
         
         T& operator[](const int index)
         {
@@ -50,6 +51,11 @@ List<T>::List()
     Size=0;
 }
 template <typename T>
+List<T> :: ~List()
+{
+    clear();
+}
+template <typename T>
 void List <T> :: push_back(T data)
 {
     if (head == nullptr)
@@ -71,6 +77,32 @@ template <typename T>
 int List<T> :: Get_Size()
 {
     return Size;
+}
+template <typename T>
+void List<T> :: pop_front()
+{
+    if (Size>0)
+    {
+        Node* temp = head;
+        head=head->pNext;
+        Size--;
+        delete temp;
+    }
+    else
+    {
+        cout<<"No elements";
+        return;
+    }
+
+}
+
+template <typename T>
+void List<T> :: clear()
+{
+    while (Size)
+    {
+        pop_front();
+    }
 }
 
 template <typename T>
