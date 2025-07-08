@@ -82,7 +82,6 @@ vector<int> findAncestorsWithStack(TreeNode* root, int target, int& operations) 
             operations++;
         }
     }
-
     return ancestors;
 }
 
