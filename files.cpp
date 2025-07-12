@@ -9,7 +9,7 @@ using namespace std;
 void removePunctuationFromWords(vector<string>& words) {
     for (auto& word : words) {          
         while (!word.empty() && ispunct(static_cast<unsigned char>(word.back()))) {
-            word.pop_back();            // Удаляем последний символ, если это знак препинания
+            word.pop_back();        
         }
     }
 }
